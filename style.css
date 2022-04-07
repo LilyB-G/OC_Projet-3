@@ -7,6 +7,88 @@ body{
     font-family: "Roboto", sans-serif;   
 }
 
+/*loading-spinner*/
+
+.loading-spinner{
+    background-color: #FFF;
+    vertical-align: middle;
+/*ajout pour disparition du loader*/    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: loader 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loader{
+    99.999% {
+        opacity: 1;
+      }
+      100% {   
+        opacity: 0;
+      }  
+}
+/*ajout*/
+
+.spinner{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    
+}
+
+/*loading-circles*/
+
+.spinner_circles{
+    border-radius: 50px;
+    border: 3px solid transparent;
+    border-top-color: #99E2D0;
+    animation: spin 1s linear infinite;
+}
+
+.spinner_circles:before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    bottom: 12px;
+    right: 12px;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    border-top-color: #FF79DA;
+    opacity: 0.5;
+    animation: spin 10s linear infinite;
+}
+
+.spinner_circles:after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    border-top-color: #9356DC;
+    opacity: 0.8;
+    animation: spin 5s linear infinite;
+}  
+
+@keyframes spin{
+    0%{transform: rotate(0deg); }
+    100%{transform: rotate(360deg);}
+    
+}
+
+
+
+
 
 /*Header*/
 h1{
@@ -142,7 +224,7 @@ h1{
 }
 
 .restaurant_card{
-    width: 450px;
+    width: 400px;
     height: 280px;
     border-radius: 25px;
     box-shadow: 4px 4px 6px #AAA;
